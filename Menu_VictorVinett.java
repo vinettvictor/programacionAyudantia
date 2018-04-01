@@ -63,6 +63,7 @@ public class Menu {
                 case 6 :
                     
                     System.out.println("Ingrese la faccion que desea filtrar");
+                    System.out.println("Asegurate de que la primera letra sea en Mayuscula(Tierra,Fuego o Agua)");
                     String faccion = leer.next();
                     
                     llamar.mostrarFaccion(faccion);
@@ -70,7 +71,8 @@ public class Menu {
                     
                     break;
                 case 7:
-                    System.out.println("Ingrese el rango que desea filtrar");
+                    System.out.println("Ingrese el rango que desea filtrar (El rango es de 1-5)");
+       
                     int rango = leer.nextInt();
                     llamar.mostrarRango(rango);
                     break;
