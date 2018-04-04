@@ -9,11 +9,11 @@ public  class luchador_VictorVinett {
     private int hp,atk,def,spd,nombreRandom,faccionRandom;
     private String faccion,nombre,faccionEscogida,nombreEscogido;
     private double estrella;
-    private int rangoEstrella;
-    
+    private int rangoEstrella,rango;
     
 //Metodo constructor
     public luchador_VictorVinett() {
+        generarEstrella();
         generarFaccion();
         generarNombres();
         this.hp = random.nextInt(300)+200;
@@ -22,6 +22,7 @@ public  class luchador_VictorVinett {
         this.spd = random.nextInt(90)+10;
         this.nombre= nombreEscogido;
         this.faccion= faccionEscogida;
+        this.rango = rangoEstrella;
     }
     
 // get y set de sus atributos 
@@ -63,24 +64,31 @@ public  class luchador_VictorVinett {
     public void setNombre(String nombre){
         this.nombre=nombre;
   }
-    
-    
+    public  int getRango(){
+        return rango;
+    } 
+    public void setRango(int rango){
+        this.rango=rango;
+    }
+       
 // Metodo para Generar nombres del luchador 
     private void generarNombres(){
         String [] nombreAleatorio = {"DarkNight","MagicGladiator","DragonKnight","RogueKnight","SoulMaster",
                                     "BladeKnight","DarkWizard","DarkLord","LordEmperor","GrandMaster",
-                                    "BladeMaster","FairyElf","MuseElf","DuelMaster","HighElf"};
+                                    "BladeMaster","FairyElfe","MuseElfe","DuelMaster","HighElfe"};
         nombreRandom =  random.nextInt(nombreAleatorio.length);  
         nombreEscogido = nombreAleatorio[nombreRandom];
     }
+    
 // Metodo para generar la faccion del luchador
     private void generarFaccion(){
         String [] faccionAleatoria = {"Fuego","Agua","Tierra"};
         faccionRandom =  random.nextInt(faccionAleatoria.length);
         faccionEscogida = faccionAleatoria[faccionRandom];
     }
+    
 // Metodo para agregar estrellas a los valores base del luchador 
-    public int generarEstrella(){
+    private int generarEstrella(){
         estrella = Math.random(); // se generara un numero entre 0 y 1 
         if (estrella <= 0.4){ // el 40% de las veces
             rangoEstrella = 1;
@@ -99,22 +107,25 @@ public  class luchador_VictorVinett {
         }else {
             rangoEstrella=5;
             return rangoEstrella; // 5 % restante
-        }
-        
+        }       
     }
      
  // Metodo para imprimir datos del luchador
     public void mostrarDatos(){
-        generarEstrella();
-        System.out.println("\nBonificacion de rango "+rangoEstrella+" estrellas\n");
+        System.out.println("\nBonificacion de rango "+this.getRango()+" estrellas\n");
         System.out.println("Nombre : "+this.getNombre()+
                 "\nFaccion : "+this.getFaccion()+
-                "\nVida con bonificacion de rango: "+this.getValorBaseHp()*rangoEstrella+
-                "\nAtaque con bonificacion de rango: "+this.getValorBaseAtk()*rangoEstrella+
-                "\nDefensa con bonificacion de rango: "+this.getValorBaseDef()*rangoEstrella+
-                "\nVelocidad con bonificacion de rango: "+this.getValorBaseSpd()*rangoEstrella);                      
+                "\nVida con bonificacion de rango: "+this.getValorBaseHp()*this.getRango()+
+                "\nAtaque con bonificacion de rango: "+this.getValorBaseAtk()*this.getRango()+
+                "\nDefensa con bonificacion de rango: "+this.getValorBaseDef()*this.getRango()+
+                "\nVelocidad con bonificacion de rango: "+this.getValorBaseSpd()*this.getRango());                      
     }
+    
+  
     //Metodo creado para testear la bonificacion de puntos
+    
+    
+   /* 
     public void mostrarDatosSinRango(){
         System.out.println("\nDatos sin Rango\n");
        
@@ -126,12 +137,13 @@ public  class luchador_VictorVinett {
                     "\nVelocidad sin bonificacion: "+this.getValorBaseSpd());
         
         }
-    
-   //Mostrar mediante el metodo toString()
+    **/
+   /*Mostrar mediante el metodo toString()
     @Override
     public String toString(){
         return "nombre: "+nombre+"\nfaccion: "+faccion+"\nhp: "+hp+"\natk: "+atk+"\ndef: "+def+"\nspd: "+spd;
     }
+    **/ 
             
             
     
