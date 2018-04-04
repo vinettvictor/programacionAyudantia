@@ -82,7 +82,7 @@ public class inventarioLuchadores {
     }
     
     //Metodo para filtrar luchadores por rango
-    public void buscarLuchadorFaccion(ArrayList<luchador_VictorVinett>luchador,int rango){
+    public void buscarLuchadorRango(ArrayList<luchador_VictorVinett>luchador,int rango){
         boolean flag = false;
         for (int i = 0;i<inventario.size();i++) {
             if(luchador.get(i).getRango() == rango){
@@ -96,6 +96,6 @@ public class inventarioLuchadores {
     //Metodo para mostrar los luchadores de un rango especifico 
     public void mostrarRango(int rango){
         System.out.println("Los luchadores de rango "+rango+" son los siguientes :");
-        buscarLuchadorFaccion(inventario,rango);    
+        buscarLuchadorRango(inventario,rango);    
     }        
 }
