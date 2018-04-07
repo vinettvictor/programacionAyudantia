@@ -21,6 +21,7 @@ public class inventarioObjetos {
         
        if (coleccObjetoEquipable.size()<maxInventario){
         coleccObjetoEquipable.add(new objetoEquipable());
+           System.out.println("Se ha agregado el objeto exitosamente");
        } else {
            System.out.println("El inventario esta lleno");
        }
