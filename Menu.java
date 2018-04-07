@@ -17,7 +17,8 @@ public class Menu {
     Scanner leer = new Scanner(System.in);
     inventarioLuchadores llamar = new inventarioLuchadores();
     objetoEquipable objeto = new objetoEquipable();
-    int opcion;
+    inventarioObjetos obj = new inventarioObjetos();
+    int opcion,rango;
     boolean op=true;
     
     while (op) {
@@ -29,13 +30,16 @@ public class Menu {
         System.out.println("5.- Escoger luchador");
         System.out.println("6.- Filtrar luchador por faccion");
         System.out.println("7.- Filtrar luchador por rango");
-        System.out.println("8.- Salir");
+        System.out.println("8.- Agregar objeto");
+        System.out.println("9.- Filtrar objeto por rango");
+        System.out.println("10.- mostrar los objetos");
+        System.out.println("11.- Salir");
         
         System.out.println("Seleccione una opcion");
         opcion = leer.nextInt();
         
                
-        if (opcion == 8){
+        if (opcion == 11){
             System.out.println("Has salido del programa");
             break;
         } else {
@@ -84,11 +88,22 @@ public class Menu {
                     System.out.println("-------------------------------------------------------------------------");
                     System.out.println("Ingrese el rango que desea filtrar (El rango es de 1-5)");
        
-                    int rango = leer.nextInt();
+                    rango = leer.nextInt();
                     llamar.mostrarRango(rango);
                     System.out.println("-------------------------------------------------------------------------");
                     break;
+                case 8:
+                    obj.agregarObjeto();
+                    break;
+                case 9:
+                    System.out.println("Ingrese el rango que desea filtrar [1-9]");
+                    rango = leer.nextInt();
+                    obj.mostrarFiltroRango(rango);
+                    break;
+                case 10:
                     
+                    obj.mostrarObjeto();
+                    break;
                 default :
                     System.out.println("La opcion marcada no es valida");
                     break;
