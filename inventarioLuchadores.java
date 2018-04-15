@@ -25,7 +25,7 @@ public class inventarioLuchadores {
     //Metodo para verificar que se alcanzo le numero maximo de luchadores
     public boolean maxLuchadores(){
         boolean maximo = false;
-        if(inventario.size()>=6){
+        if(inventario.size()>=25){
             System.out.println("Se ha alcazando el limite de luchadores");
         }else {
             maximo = true;

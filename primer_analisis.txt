@@ -1,0 +1,10 @@
+En este analisis se puede observar la relacion que se tienen entre 5 clases 
+
+-inventario luchadores tiene una relación de asosiación con Luchador_VictorVinett con multiplicidad de 1 a 25
+esto es por que puede tener como minimo 1 luchador y como maximo 25 luchadores.
+
+-inventarioObjetos tiene una relación de asosiación con objetoEquipable con multiplicidad de 0 a 25,
+como minimo puede tener 0 objetos y maximo 10, y donde tambien puede quitar objetos o agregar objetos.
+
+-monstruo solo tiene una relacion de dependencia con objetoEquipable ya que solo 
+esta llamando a la clases objetoEquipable() para poder crear un objetoDropable.

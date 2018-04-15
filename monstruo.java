@@ -13,12 +13,14 @@ import java.util.Random;
 public class monstruo {
     Random rnd = new Random();
     private int hp,atk,def,spd;
-    
+    private String faccion;
     public monstruo(){
+        generarFaccion();
         this.hp  = rnd.nextInt(500)+3500;
         this.atk = rnd.nextInt(500)+1000;
         this.def = rnd.nextInt(20)+5;
-        this.spd = rnd.nextInt(90)+10;        
+        this.spd = rnd.nextInt(90)+10;  
+        
     }
     
     public int getHp(){
@@ -48,6 +50,12 @@ public class monstruo {
     public void setSpd(int spd){
         this.spd = spd;    
        
+    }
+    
+    private void generarFaccion(){
+        String [] faccionAleatoria = {"Tierra","Fuego","Agua"};
+        int faccionRandom = rnd.nextInt(faccionAleatoria.length);
+        String faccionEscogida = faccionAleatoria[faccionRandom];
     }
     
     private void crearObjetoDropeable(){
