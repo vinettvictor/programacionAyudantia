@@ -15,15 +15,16 @@ public class inventarioLuchadores {
     ArrayList <luchador_VictorVinett> inventario = new ArrayList<luchador_VictorVinett>();
         
     //Metodo para agregar un luchador
+    
     public   void agregarLuchador(){ 
        if(maxLuchadores()){
         inventario.add(new luchador_VictorVinett());
-        System.out.println("Ha agregado un luchador exitosamente");
+        System.out.println("Ha agregado un luchador exitosamente para la pelea");
        }
     }
     
     //Metodo para verificar que se alcanzo le numero maximo de luchadores
-    public boolean maxLuchadores(){
+    private boolean maxLuchadores(){
         boolean maximo = false;
         if(inventario.size()>=25){
             System.out.println("Se ha alcazando el limite de luchadores");

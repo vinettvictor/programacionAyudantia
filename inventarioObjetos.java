@@ -63,5 +63,12 @@ public class inventarioObjetos {
         buscarObjetos(coleccObjetoEquipable);
     }
     
-    
+    //Se crea metodo para agregar el objeto que dropeo el monstruo
+    public void agregarObjDropeado(objetoEquipable obj){
+        if(coleccObjetoEquipable.size()>10){
+            System.out.println("El inventario esta lleno");
+        }else {
+            coleccObjetoEquipable.add(obj);
+        }
+    }
 }

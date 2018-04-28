@@ -14,9 +14,11 @@ import java.util.Scanner;
 public class Menu {
     
     public void crearMenu(){
+    
     Scanner leer = new Scanner(System.in);
     inventarioLuchadores llamar = new inventarioLuchadores();
     objetoEquipable objeto = new objetoEquipable();
+    luchador_VictorVinett luchador = new luchador_VictorVinett();
     inventarioObjetos obj = new inventarioObjetos();
     int opcion,rango;
     boolean op=true;
@@ -33,13 +35,14 @@ public class Menu {
         System.out.println("8.- Agregar objeto");
         System.out.println("9.- Filtrar objeto por rango");
         System.out.println("10.- mostrar los objetos");
-        System.out.println("11.- Salir");
+        System.out.println("11.- Luchar");
+        System.out.println("12.- Salir");
         
         System.out.println("Seleccione una opcion");
         opcion = leer.nextInt();
         
                
-        if (opcion == 11){
+        if (opcion == 12){
             System.out.println("Has salido del programa");
             break;
         } else {
@@ -72,6 +75,8 @@ public class Menu {
                     System.out.println("Por favor escoga la posicion del luchador que desea ver sus estadisticas");
                     int posicion = leer.nextInt();
                     llamar.escogerLuchador(posicion);
+                    
+                    
                     System.out.println("-------------------------------------------------------------------------");
                     break;
                 case 6 :
@@ -103,6 +108,12 @@ public class Menu {
                 case 10:
                     
                     obj.mostrarObjeto();
+                    break;
+                case 11:
+                    Batalla b = new Batalla();
+                    b.crearTeam();
+                    b.mostrarTeam();
+                                      
                     break;
                 default :
                     System.out.println("La opcion marcada no es valida");

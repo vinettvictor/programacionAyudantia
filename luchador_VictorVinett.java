@@ -3,7 +3,9 @@ package proyectoayudantia;
  *
  * @author Victor Vinett
  */
+
 import java.util.Random;
+
 public  class luchador_VictorVinett {
     Random random = new Random();
     private int hp,atk,def,spd,nombreRandom,faccionRandom;
@@ -23,6 +25,7 @@ public  class luchador_VictorVinett {
         this.nombre= nombreEscogido;
         this.faccion= faccionEscogida;
         this.rango = rangoEstrella;
+        equiparObjeto();
     }
     
 // get y set de sus atributos 
@@ -82,7 +85,7 @@ public  class luchador_VictorVinett {
     
 // Metodo para generar la faccion del luchador
     private void generarFaccion(){
-        String [] faccionAleatoria = {"Fuego","Agua","Tierra"};
+        String [] faccionAleatoria = {"Fuego","Agua","Planta"};
         faccionRandom =  random.nextInt(faccionAleatoria.length);
         faccionEscogida = faccionAleatoria[faccionRandom];
     }
@@ -109,7 +112,26 @@ public  class luchador_VictorVinett {
             return rangoEstrella; // 5 % restante
         }       
     }
-     
+    
+    //metodo que permite equipar objeto
+    
+    private void equiparObjeto(){
+        objetoEquipable equiparObj = new objetoEquipable();
+        equiparObj.getObjetoEquipado();
+        equiparObj.getObjetoSeleccionado();
+        
+        if (equiparObj.getObjetoSeleccionado().equals("healthposion")){
+            int hpMejorado = this.getValorBaseHp()*this.getRango()*equiparObj.getObjetoEquipado();
+        }else if (equiparObj.getObjetoSeleccionado().equals("espada")){
+            int atkMejorado = this.getValorBaseAtk()*this.getRango()*equiparObj.getObjetoEquipado();
+        }else if (equiparObj.getObjetoSeleccionado().equals("botas")){
+            int spdMejorado = this.getValorBaseSpd()*this.getRango()*equiparObj.getObjetoEquipado();
+        }else if (equiparObj.getObjetoSeleccionado().equals("armadura")){
+            int defMejorado = this.getValorBaseDef()*this.getRango()*equiparObj.getObjetoEquipado();
+        }
+            
+    }
+    
  // Metodo para imprimir datos del luchador
     public void mostrarDatos(){
         System.out.println("\nBonificacion de rango "+this.getRango()+" estrellas\n");

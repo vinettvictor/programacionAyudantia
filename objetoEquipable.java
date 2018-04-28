@@ -12,7 +12,7 @@ package proyectoayudantia;
 import java.util.Random;
 public class objetoEquipable {
     Random random = new Random();
-    private int rangoObj;
+    private int rangoObj,rango;
     private int mejoraBaseObj;
     private int objetoFinal;
     private int objetoRandom;
@@ -25,10 +25,9 @@ public class objetoEquipable {
         mejoraObjetoFinal();
         asignarObjeto();
         
-        this.objetoSeleccionado = objetoEscogido;
-        this.objetoEquipado = stat;
-        
-        
+        this.objetoSeleccionado = objetoEscogido; // obtenenemos el nombre del objeto
+        this.objetoEquipado = stat; // obtenemos los puntos que asignara el objeto        
+        this.rango= rangoObj;
     }
     
     //Metodo de la mejora base que estara entre [1,9]
@@ -56,6 +55,14 @@ public class objetoEquipable {
     }
     public void setObjetoSeleccion(String objetoSeleccionado){
         this.objetoSeleccionado = objetoSeleccionado;
+    }
+    
+    public int getRangoObj(){
+        return rango;
+    }
+    
+    public void setRangoObj(int rango){
+        this.rango=rango;
     }
 
     
@@ -93,10 +100,12 @@ public class objetoEquipable {
         objetoEscogido = objetoAleatorio[objetoRandom];
     }
     
+    
+    //Metodo para comparar el objeto y asignarle el valor del objeto obtenido
     private int asignarObjeto(){
         generarObjeto();
         if (objetoEscogido.equals("espada")){
-            stat = objetoFinal;
+            stat = objetoFinal;           
            return stat;
         }else if(objetoEscogido.equals("armadura")){
             stat = objetoFinal;
