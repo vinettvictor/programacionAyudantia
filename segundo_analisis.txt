@@ -1,0 +1,24 @@
+En este segundo analisis se agregaron 2 clases nuevas, la cal hay 7 clases.
+
+-Se puede observa que en la clase nueva Batalla existe una agregacion por parte
+de inventario luchadores, ya que esta agregando luchadores existentes de su inventario
+
+-Tambien esta la clases Dado la cual solo cumple el rol del hacer la resta entre
+el dado1 = que contienee 8 caras , y el dado2 = que tiene 6 caras. Lo cual solo 
+clase batalla lo ocupara, en simples palabras ocupa una relacion de Dependencia
+ya que se solo basta con llamar su clase. 
+
+-Luchador_VictorVinett tambien ocupara una relacion de agregacion con objetoEquipable
+ya que de un objeto existente el luchador tendra la posibilidad de agregar entre 0 a 1 objeto,
+en donde este objeto le mejorar un stat en especifico.
+
+-Entre Monstruo y ObjetoEquipable existe dependencia, Monstruo depende de objetoEquipable
+ya que Monstruo esta generando un objeto el cual sera dropeado por le monstruo. 
+
+-luchador_VictorVinett agregara luchador a inventarioLuchadores, con una multiplicidad entre 1 a 25.
+-Batalla y monstruo tendra una relacion de asosiación unidireccional , que ira de Batalla a monstruo .
+se debe a que batalla esta creando un monstruo por cada pelea que se efectuara aqui, tendra
+una multiplicidad de 1 a 1 , ya que no pueden haber 0 monstruos a la hora de la pelea. 
+
+-Entre inventarioObjeto y objetoEquipable existira agregacion por parte de objetoEquipable, el cual
+tiene una multiplicidad de 0 a 10.
