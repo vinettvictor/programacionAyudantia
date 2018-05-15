@@ -26,12 +26,12 @@ public class Monstruo {
         this.faccion = faccion;
     }
     
-    public void monstrarMonstruo(){
+    public void mostrarMonstruo(){
         String msj ="";
-        msj = "\t"+hp;
-        msj +="\t\t"+atk;
-        msj +="\t\t"+def;
-        msj +="\t\t"+spd;
+        msj = "Vida: "+hp;
+        msj +="\nAtaque: "+atk;
+        msj +="\nDefensa: "+def;
+        msj +="\nVelocidad: "+spd;
         
         System.out.println(msj);
     }
@@ -102,5 +102,9 @@ public class Monstruo {
             
         }
         return estrellaDrop;
+    }
+    
+    public void dropItem(){
+        generaDrop();
     }
 }

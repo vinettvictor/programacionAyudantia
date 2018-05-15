@@ -112,8 +112,8 @@ public class Menu {
                 case 11:
                     Batalla b = new Batalla();
                     b.crearTeam();
-                    b.mostrarTeam();
-                                      
+                    b.combate();
+                               
                     break;
                 default :
                     System.out.println("La opcion marcada no es valida");
